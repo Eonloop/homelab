@@ -14,3 +14,26 @@ crash.log
 
 # For built boxes
 *.box
+
+# Terraform state and variables
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.tfvars
+
+# Ansible sensitive files
+inventory/
+ansible.cfg
+secret*.yml
+secrets.yml
+*.vault
+
+# General secrets and credentials
+*.pem
+*.key
+*.cred
+credentials.json
+
+# Local config & logs
+*.log
+.DS_Store
