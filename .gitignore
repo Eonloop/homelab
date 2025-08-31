@@ -1,0 +1,39 @@
+# Packer cache directory
+packer_cache/
+.packer.d/
+
+# Packer crash log
+crash.log
+
+# Exclude all .pkrvars.hcl files.
+*.pkrvars.hcl
+
+# Built virtual machine images
+*.box
+
+
+# Local Terraform directories
+.terraform/
+.terraform.lock.hcl
+
+# Terraform state files. 
+*.tfstate
+*.tfstate.*
+
+# Terraform variable files.
+*.tfvars
+terraform.tfvars
+
+
+
+*.pem
+*.key
+*.cred*
+credentials.json
+secrets.yml
+secret*.yml
+*.vault
+
+
+.DS_Store
+Thumbs.db
