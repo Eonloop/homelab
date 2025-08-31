@@ -4,7 +4,7 @@ A repository to hold IaC files, diagrams, docker-compose files, and scripts for 
 ### The Infrastructure
 Here is a high level overview of my network and server setup.
 
-![Homelab Network Diagram](./Network/Homelab-Network.png)
+![Homelab Network Diagram](./network/Homelab-Network.png)
 
 
 ### The Tools
