@@ -5,8 +5,7 @@ terraform {
 
     workspaces { 
       name = "proxmox-homelab" 
-    }
-    execution_mode = "local" 
+    } 
   } 
 
   required_providers {
@@ -19,7 +18,7 @@ terraform {
 }
 
 provider "proxmox" {
- endpoint  = "https://192.168.1.18:8006/api2/json"
+ endpoint  = "https://192.168.1.15:8006/api2/json"
  api_token      = var.proxmox_api_token
  insecure = true
 

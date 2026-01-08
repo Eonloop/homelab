@@ -1,6 +1,6 @@
 locals {   
-  grackle = "grackle"
-  thrush = "thrush"
+  grackle = "booby"
+  thrush = "eagle"
   warbler = "warbler"
   
   template_name = "Debian-13-Cloud-Template"
@@ -10,7 +10,7 @@ locals {
   ][0], null)
 
   standard_disk = {
-    datastore_id = local.datastore
+    datastore_id = var.datastore
     interface    = "scsi0"
     iothread     = true
     discard      = "on"
