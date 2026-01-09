@@ -1,0 +1,55 @@
+---
+- name: Configure Raspberry Pi
+  hosts: rpis, vms
+  become: true
+  tasks: 
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        upgrade: dist
+    - name: Install required packages
+      ansible.builtin.package:
+        name: [git, curl, wget, unzip, vim, neovim, tmux, btop, htop, fastfetch]
+        state: present
+    - name: Add eonloop user
+      ansible.builtin.user:
+        name: eonloop
+        groups: sudo
+        append: true
+    - name: Create .ssh directory for eonloop
+      ansible.builtin.file:
+        path: /home/eonloop/.ssh
+        state: directory
+        owner: eonloop
+        group: eonloop
+        mode: '0700'
+    - name: Add SSH public key for eonloop
+      ansible.builtin.authorized_key:
+        user: eonloop
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+    - name: Add eonloop to sudoers
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        line: "eonloop ALL=(ALL) NOPASSWD:ALL"
+        create: true
+    - name: Install Docker
+      ansible.builtin.package:
+        name: docker.io
+        state: present
+    - name: Start Docker
+      ansible.builtin.systemd:
+        name: docker
+        state: started
+        enabled: true
+    - name: Add user to docker group
+      ansible.builtin.user:
+        name: eonloop
+        groups: docker
+        append: true
+    - name: Install Docker Compose
+      ansible.builtin.package:
+        name: docker-compose
+        state: present

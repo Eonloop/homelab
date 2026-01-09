@@ -1,0 +1,10 @@
+*.retry
+*.log
+
+*.key
+*.pem
+
+.vault_pass
+vars/secrets.yml
+
+inventory.ini
