@@ -5,5 +5,5 @@ data "local_file" "ssh_public_key" {
 
 # Find the Packer template
 data "proxmox_virtual_environment_vms" "template" {
-  node_name = "grackle"
+  node_name = "booby"
 }

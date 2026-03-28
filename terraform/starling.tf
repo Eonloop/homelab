@@ -5,7 +5,7 @@ resource "proxmox_virtual_environment_vm" "starling" {
   
   clone {
     vm_id     = local.template_id
-    node_name = local.grackle
+    node_name = local.booby
   }
 
   cpu {

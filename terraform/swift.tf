@@ -1,11 +1,11 @@
 resource "proxmox_virtual_environment_vm" "swift" {
   name      = "Swift"
   vm_id     = 202              # Hard-code this to avoid the 106 collision!
-  node_name = local.thrush    # Use a local variable
+  node_name = local.warbler    # Use a local variable
   
   clone {
     vm_id     = local.template_id
-    node_name = local.grackle
+    node_name = local.booby
   }
 
   cpu {

@@ -1,6 +1,6 @@
 locals {   
-  grackle = "booby"
-  thrush = "eagle"
+  booby = "booby"
+  eagle = "eagle"
   warbler = "warbler"
   
   template_name = "Debian-13-Cloud-Template"
